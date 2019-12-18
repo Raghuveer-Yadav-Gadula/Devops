@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 LOCATION=$1
 RGROUP=$1 
