@@ -6,7 +6,7 @@ RECOVERYSERVICEVAULT=$2
 VM_NAME=$3
 DATE=$4
 AZBKPPOLICYNAME=$5
-
+SUBSCRIPTION=$6
 
 
 # Create recovery vault
@@ -19,4 +19,4 @@ az backup vault create --name $RESOURCEGROUP --name $RECOVERYSERVICEVAULT --loca
 #az backup protection backup-now --resource-group $RGROUP --vault-name $RVAULT --vm $VM_NAME --retention $DATE
 
 #create new backup policy with BackupManagementType and workload Type
-az backup policy create --name {azbackup} --resource-group $RESOURCEGROUP --vault-name $RECOVERYSERVICEVAULT --name $AZBKPPOLICYNAME
+az backup policy create --name {azbackup} --resource-group $RESOURCEGROUP --vault-name $RECOVERYSERVICEVAULT --name $AZBKPPOLICYNAME [--subscription $SUBSCRIPTION]
