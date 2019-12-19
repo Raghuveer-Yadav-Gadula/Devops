@@ -19,7 +19,7 @@ az backup vault create --name $RESOURCEGROUP --name $RECOVERYSERVICEVAULT --loca
 #az backup protection backup-now --resource-group $RGROUP --vault-name $RVAULT --vm $VM_NAME --retention $DATE
 
 #usage of az show and parsing in json template
-az vm show -g 
+az vm show -g policy{policy}
 
 #create new backup policy with BackupManagementType and workload Type
 az backup policy create --name {azbackup} --resource-group $RESOURCEGROUP --vault-name $RECOVERYSERVICEVAULT --name $AZBKPPOLICYNAME [--subscription $SUBSCRIPTION]
