@@ -9,6 +9,7 @@ AZBKPPOLICYNAME=$5
 SUBSCRIPTION=$6
 
 
+
 # Create recovery vault
 az backup vault create --name $RESOURCEGROUP --name $RECOVERYSERVICEVAULT --location $LOCATION
 
@@ -24,9 +25,9 @@ az backup vault create --name $RESOURCEGROUP --name $RECOVERYSERVICEVAULT --loca
 #source of the json template "https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-keyvault-parameter"
 
 #create new backup policy with BackupManagementType and workload Type
-az backup policy create --name {azbackup} --resource-group $RESOURCEGROUP --vault-name $RECOVERYSERVICEVAULT --name $AZBKPPOLICYNAME [--subscription $SUBSCRIPTION]
+#az backup policy create --name {azbackup} --resource-group $RESOURCEGROUP --vault-name $RECOVERYSERVICEVAULT --name $AZBKPPOLICYNAME [--subscription $SUBSCRIPTION]
 
 #create backup vault creation via json file/template
 
 #create az bkp policy create via jason file/template
-az backup policy create --policy {az-bkp-daily-policy-deploy.json}
+az backup policy create --policy {az-bkp-daily-policy-deploy.json} --resource-group $RESOURCEGROUP --vault-name $RECOVERYSERVICEVAULT --name $AZBKPPOLICYNAME [--subscription $SUBSCRIPTION]
