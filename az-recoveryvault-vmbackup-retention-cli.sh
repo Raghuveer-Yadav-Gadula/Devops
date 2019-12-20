@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 
 LOCATION=$1
 RESOURCEGROUP=$1 
@@ -25,3 +25,8 @@ az vm show -g policy{az-backup-vault-creation.json}
 
 #create new backup policy with BackupManagementType and workload Type
 az backup policy create --name {azbackup} --resource-group $RESOURCEGROUP --vault-name $RECOVERYSERVICEVAULT --name $AZBKPPOLICYNAME [--subscription $SUBSCRIPTION]
+
+#create backup vault creation via json file/template
+
+#create az bkp policy create via jason file/template
+az backup policy create --policy {az-bkp-daily-policy-deploy.json}
